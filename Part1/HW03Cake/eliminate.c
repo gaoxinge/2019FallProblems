@@ -21,21 +21,31 @@ void eliminate(int n, int k)
       return;
     }
   // initialize all elements
-
-
+  for (int i = 0; i < n; i++)
+      arr[i] = 1;
   
   // counting to k,
   // mark the eliminated element
   // print the index of the marked element
   // repeat until only one element is unmarked
-
-
-
-
-  // print the last one
-
-
-
+  int index = n - 1;
+  int count = k;
+  int mark = n;
+  while (mark) {
+      while (count) {
+          do {
+              if (index == n - 1) 
+                  index = 0;
+              else                
+                  index++;
+          } while (!arr[index]);
+          count--;
+      }
+      printf("%d\n", index);
+      arr[index] = 0;
+      count = k;
+      mark--;
+  }
 
   // release the memory of the array
   free (arr);
