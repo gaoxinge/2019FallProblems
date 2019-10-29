@@ -31,6 +31,20 @@ test3: sort
 	./sort inputs/test3 > output3
 	diff output3 expected/expected3
 
+testgradeall: testgrade1 testgrade2 testgrade3
+
+testgrade1: sort
+	./sort Grading/inputs/test1 > output1
+	# diff output1 Grading/expected/expected1
+
+testgrade2: sort
+	./sort Grading/inputs/test2 > output2
+	# diff output2 Grading/expected/expected2
+
+testgrade3: sort
+	./sort Grading/inputs/test3 > output3
+	# diff output3 Grading/expected/expected3
+
 clean: # remove all machine generated files
 	rm -f sort *.o output?
 

@@ -42,5 +42,15 @@ void ssort(int * arr, int size)
 
   // After finding the smallest element among the unsorted elements,
   // swap it with the element of the index from the first level
+
+  for (int i = 0; i < size - 1; i++) {
+      for (int j = i + 1; j < size; j++) {
+          if (arr[j] < arr[i]) {
+              int tmp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = tmp;
+          }
+      }
+  }
 }
 #endif
